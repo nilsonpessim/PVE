@@ -2,6 +2,7 @@
 /**
  * API DOCUMENTATION
  * https://pve.proxmox.com/pve-docs/api-viewer/
+ * https://github.com/zzantares/ProxmoxVE/wiki
  */
 
 namespace Source\App;
@@ -18,13 +19,13 @@ class PVE
         self::proxmox($this->credentials);
     }
 
-    public function proxmox($credentials): Proxmox
+    public function proxmox(array $credentials): Proxmox
     {
-        $this->proxmox = new Proxmox($credentials);
+        $this->proxmox = new Proxmox($credentials, 'json');
         return $this->proxmox;
     }
 
-    public function get($action = CONF_DEFAULT_METHODS_GET)
+    public function get(string $action = CONF_DEFAULT_METHODS_GET)
     {
         return $this->proxmox->get($action);
     }
