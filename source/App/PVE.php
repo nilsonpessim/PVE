@@ -1,4 +1,8 @@
 <?php
+/**
+ * API DOCUMENTATION
+ * https://pve.proxmox.com/pve-docs/api-viewer/
+ */
 
 namespace Source\App;
 use ProxmoxVE\Proxmox;
